@@ -11,11 +11,12 @@ function TodoForm() {
     e.preventDefault();
     if (!todo) return;
 
-    addTodo({ todo, complete: false });
+    addTodo({ todo, completed: false });
     setTodo("");
   };
+  console.log(todo);
   return (
-    <form className="flex">
+    <form onSubmit={add} className="flex">
       <input
         type="text"
         placeholder="Write Todo..."
